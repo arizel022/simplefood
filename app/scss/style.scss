@@ -1,0 +1,495 @@
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "global";
+
+.header {
+	.menu {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 60px 5px;
+
+		&__list {
+			display: flex;
+			justify-content: space-between;
+			margin: 0 63px 0 auto;
+		}
+
+		&__item + .menu__item {
+			margin-left: 45px;
+		}
+
+		&__link {
+			padding: 2px 5px;
+			border: 2px solid transparent;
+			transition: all 0.4s;
+			&:focus {
+				border: 2px solid $orange;
+				border-radius: 7px;
+			}
+			&:hover {
+				color: $orange;
+			}
+			&:active {
+				text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+			}
+		}
+
+		&__search {
+			background-color: transparent;
+			border: 2px solid transparent;
+			border-radius: 7px;
+			margin-right: 35px;
+			width: 39px;
+			height: 39px;
+			cursor: pointer;
+			transition: all 0.3s;
+			position: relative;
+			& svg {
+				position: absolute;
+				content: "";
+				top: -3px;
+				left: -1px;
+				margin: 10px;
+			}
+			&:focus {
+				border: 2px solid $orange;
+				border-radius: 7px;
+				background-color: rgba(255, 122, 80, 0.1);
+			}
+			&:hover {
+				background-color: $orange;
+				border-radius: 7px;
+				& path,
+				ellipse {
+					stroke: $white;
+				}
+			}
+			&:active {
+				background-color: rgba(255, 122, 80, 0.1);
+			}
+		}
+
+		&__cart {
+			border: 2px solid transparent;
+			border-radius: 7px;
+			margin-right: 13px;
+			width: 44px;
+			height: 44px;
+			transition: all 0.3s;
+			position: relative;
+			& svg {
+				position: absolute;
+				content: "";
+				top: 0;
+				left: 0;
+				margin: 10px;
+			}
+			&-span {
+				content: "";
+				position: absolute;
+				width: 14px;
+				height: 14px;
+				background-color: $orange;
+				color: #fff;
+				font-size: 10px;
+				text-align: center;
+				border-radius: 50%;
+				top: 5px;
+				right: 3px;
+			}
+			&:focus {
+				border: 2px solid $orange;
+				border-radius: 7px;
+				background-color: rgba(255, 122, 80, 0.1);
+			}
+			&:hover {
+				background-color: $orange;
+				& path {
+					stroke: $white;
+				}
+				& span {
+					background-color: $white;
+					color: $orange;
+				}
+			}
+			&:active {
+				background-color: rgba(255, 122, 80, 0.1);
+			}
+		}
+	}
+	.logo {
+		border: 2px solid transparent;
+		border-radius: 6px;
+		transition: all 0.3s;
+		&__img {
+			max-width: 200px;
+		}
+		&:focus {
+			border: 2px solid $orange;
+		}
+		&:hover {
+			opacity: 0.8;
+		}
+		&:active {
+			opacity: 0.5;
+		}
+	}
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 120px;
+	}
+
+	&__info {
+		max-width: 450px;
+	}
+
+	&__text {
+		margin-bottom: 20px;
+	}
+
+	&__img {
+		max-width: 560px;
+	}
+
+	&__title {
+		font-size: 66px;
+		text-transform: uppercase;
+		margin-bottom: 20px;
+		& span {
+			color: $orange;
+		}
+	}
+}
+.link {
+	&__menu {
+		display: inline-block;
+		padding: 12px 32px;
+		margin-right: 20px;
+		transition: all 0.3s;
+		@extend %btn;
+		&:focus {
+			color: $orange;
+			border: 2px solid $orange;
+			background-color: rgba(255, 122, 80, 0.1);
+		}
+		&:hover {
+			color: $orange;
+			border: 2px solid $orange;
+			background-color: transparent;
+		}
+		&:active {
+			color: $orange;
+			background-color: rgba(255, 122, 80, 0.1);
+		}
+	}
+
+	&__info {
+		padding: 12px 14px;
+		border: 2px solid transparent;
+		transition: all 0.3s;
+		&:focus {
+			border: 2px solid $orange;
+			border-radius: 7px;
+		}
+		&:hover {
+			color: $orange;
+		}
+		&:active {
+			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+		}
+	}
+}
+
+.footer {
+	text-align: center;
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 90px;
+		text-align: left;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+	}
+	&__logo {
+		margin-bottom: 30px;
+	}
+	&__list {
+	}
+
+	&__item {
+		margin-bottom: 20px;
+	}
+
+	&__link {
+		display: block;
+		font-size: 18px;
+		line-height: 1.3;
+	}
+
+	&__copy {
+		margin-bottom: 30px;
+		display: inline-block;
+	}
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	&__label {
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+
+	&__input {
+		max-width: 200px;
+		width: 100%;
+		background-color: $white;
+		color: $gray;
+		padding: 13px 15px;
+		border: 1px solid $gray;
+		border-radius: 5px;
+		font-size: 14px;
+		line-height: 1.3;
+		outline: transparent;
+		&:focus {
+			border-color: $orange;
+		}
+		&:hover {
+			&::placeholder {
+				color: $darkBlue;
+			}
+		}
+	}
+
+	&__btn {
+		@extend %btn;
+		max-width: 200px;
+		width: 100%;
+		padding: 13px 39px 13px 70px;
+		font-size: 14px;
+		line-height: 1.3;
+		transition: all 0.3s;
+		position: relative;
+		& svg {
+			position: absolute;
+			content: "";
+			left: 39px;
+			top: 14px;
+		}
+		&:focus {
+			border: 2px solid $orange;
+			background-color: rgba(255, 122, 80, 0.1);
+			color: $orange;
+			& path {
+				fill: $orange;
+			}
+		}
+		&:hover {
+			border: 2px solid $orange;
+			background-color: transparent;
+			color: $orange;
+			& path {
+				fill: $orange;
+			}
+		}
+		&:active {
+			border: 2px solid transparent;
+			background-color: rgba(255, 122, 80, 0.1);
+			color: $orange;
+			& path {
+				fill: $orange;
+			}
+		}
+	}
+}
+.social {
+	&__list {
+		display: flex;
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-right: 13px;
+		}
+	}
+
+	&__link {
+		display: block;
+		width: 41px;
+		height: 41px;
+		border: 2px solid transparent;
+		border-radius: 50%;
+		transition: all 0.3s;
+		position: relative;
+		& svg {
+			position: absolute;
+			content: "";
+			left: -1px;
+			top: -1px;
+		}
+		&:focus {
+			border: 2px solid $orange;
+			& circle {
+				fill: $white;
+			}
+		}
+		&:hover {
+			& path {
+				fill: $white;
+			}
+			& circle {
+				fill: $orange;
+			}
+		}
+		&:active {
+			& path {
+				fill: $orange;
+			}
+			& circle {
+				fill: $white;
+			}
+		}
+	}
+}
+
+.categories {
+	text-align: center;
+	margin-bottom: 120px;
+	&__title {
+		margin-bottom: 60px;
+	}
+	&__list {
+		display: flex;
+		margin-bottom: 45px;
+	}
+	&__item {
+		&:not(:last-child) {
+			margin-right: 20px;
+		}
+	}
+	&__btn {
+		border-radius: 5px;
+		border: 2px solid $silver;
+		background-color: $white;
+		display: inline-block;
+		padding: 19px 32px 19px 87px;
+		transition: all 0.3s;
+		position: relative;
+		& svg {
+			position: absolute;
+			content: "";
+			left: 25px;
+			top: 13px;
+		}
+		&:focus {
+			border: 2px solid $orange;
+		}
+		&:hover {
+			background-color: rgba(255, 122, 80, 0.1);
+			color: $orange;
+			border: 2px solid $orange;
+			transition: all 0.3s;
+			& path {
+				fill: $orange;
+			}
+		}
+		&:active {
+			border: 2px solid $silver-bg;
+			box-shadow: inset 0px -5px 12px rgba(255, 104, 56, 0.2);
+		}
+	}
+}
+
+.categories {
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		grid-gap: 30px;
+		margin-bottom: 60px;
+	}
+
+	&__add {
+		border: 2px solid transparent;
+		border-bottom: 1px solid $darkBlue;
+		line-height: 1.5;
+		padding: 5px;
+		transition: all 0.3s;
+		&:focus {
+			border: 2px solid $orange;
+			text-decoration: underline;
+			border-radius: 7px;
+		}
+		&:hover {
+			border: 2px solid transparent;
+			color: $orange;
+		}
+		&:active {
+			border: 2px solid transparent;
+			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+		}
+	}
+}
+.categories {
+	&__goods {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		max-width: 210px;
+		width: 100%;
+		padding: 30px 15px 20px;
+		background-color: $white;
+		border: 2px solid $silver;
+		border-radius: 6px;
+		transition: all 0.3s;
+		&:hover {
+			border: 2px solid $orange;
+		}
+	}
+
+	&__goods-link {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__goods-img {
+		max-width: 140px;
+		max-height: 140px;
+		margin: 0 auto 10px;
+	}
+
+	&__goods-desc {
+		max-width: 180px;
+		font-size: 15px;
+		@extend %rubik-400;
+		margin-bottom: 10px;
+	}
+
+	&__goods-price {
+		font-size: 15px;
+		@extend %rubik-600;
+		margin-bottom: 10px;
+	}
+
+	&__goods-cart {
+		@extend %btn;
+		margin: 0 auto;
+		font-size: 14px;
+		padding: 7px 16px;
+	}
+}
+.mix {
+}
+.category-e {
+}
+
+//@import "media";
