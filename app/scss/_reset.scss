@@ -51,7 +51,20 @@ textarea,
 select {
   font: inherit;
 }
-
+button{
+  font-style: inherit;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
 a {
   text-decoration: none;
+}
+
+@function max($numbers...) {
+	@return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+	@return m#{i}n(#{$numbers});
 }
