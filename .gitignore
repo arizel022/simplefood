@@ -5,8 +5,8 @@
 *.sublime*
 npm-debug.*
 
-src/
-dist/
+#src/
+#dist/
 node_modules/
 package-lock.json
 #app/css/*
