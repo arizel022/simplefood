@@ -289,8 +289,7 @@
 .categories__btn--active {
 	background-color: $orange-900;
 	color: $white;
-	
-	path {
+		path {
 		fill: $white;
 	}
 }
@@ -298,7 +297,7 @@
 .footer {
 	&__inner {
 		display: flex;
-		margin-bottom: 7px;
+		margin-bottom: 8px;
 	}
 
 	&__box {
